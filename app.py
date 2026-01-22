@@ -3,16 +3,16 @@ import joblib
 import re
 
 st.set_page_config(page_title="Sentiment Analysis App")
-st.write("✅ App file loaded")
+st.write(" App file loaded")
 
-st.title("📝 Sentiment Analysis App")
+st.title(" Sentiment Analysis App")
 
 # ---- Load model safely ----
 try:
     model = joblib.load("model.pkl")
-    st.success("✅ Model loaded successfully")
+    st.success(" Model loaded successfully")
 except Exception as e:
-    st.error("❌ Model failed to load")
+    st.error(" Model failed to load")
     st.exception(e)
     st.stop()
 
@@ -34,6 +34,7 @@ if st.button("Analyze Sentiment"):
         prediction = model.predict([cleaned])[0]
 
         if prediction == 1:
-            st.success("😊 Positive Review")
+            st.success("Positive Review")
         else:
-            st.error("😡 Negative Review")
+            st.error("Negative Review")
+
